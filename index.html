@@ -1,0 +1,49 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inarch Center Links</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="overlay">
+    <button class="admin-btn" onclick="showModal()">Admin Login</button>
+    <div class="container" id="mainSection">
+      <h1>Inarch Center Links</h1>
+      <div id="addSection" class="hidden">
+        <div class="form-group">
+          <label for="buttonText">Button Text:</label>
+          <input type="text" id="buttonText" placeholder="Enter button text" />
+        </div>
+        <div class="form-group">
+          <label for="buttonUrl">URL:</label>
+          <input type="url" id="buttonUrl" placeholder="https://example.com" />
+        </div>
+        <button class="btn-success" onclick="addButton()">Add Button</button>
+        <button class="btn-primary" onclick="logout()">Logout</button>
+        <hr />
+      </div>
+      <div class="links-container">
+        <h3>Your Links</h3>
+        <div id="buttonsContainer"><p>No links added yet.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Modal -->
+  <div class="modal-overlay" id="adminModal" onclick="hideModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <h2>Admin Verification</h2>
+      <div class="form-group">
+        <label for="codeInput">Enter 6-digit code:</label>
+        <input type="text" id="codeInput" placeholder="6 Digit Code" maxlength="6" />
+      </div>
+      <button class="btn-primary" onclick="checkCode()">Verify</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
